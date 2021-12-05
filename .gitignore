@@ -1,0 +1,7 @@
+*.lock*
+*.backup
+.terraform
+*.crt
+*.pem
+*.tfstate
+secrets.sh
