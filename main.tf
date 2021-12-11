@@ -241,6 +241,7 @@ resource "aws_elastic_beanstalk_environment" "default" {
     name      = "MONGO_USERNAME"
     value     = var.mongo_db_username
   }
+  # Parse out the bit of the connection string we need. There's other ways to get the right URL for the Flask backend, I'm sure...
   setting {
     namespace = "aws:elasticbeanstalk:application:environment"
     name      = "MONGO_CONNECTION_STRING"

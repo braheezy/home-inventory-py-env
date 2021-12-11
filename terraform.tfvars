@@ -21,8 +21,5 @@ aws_amplify_repo_url = "https://github.com/mbraha/home-inventory-py-frontend"
 */
 mongo_project_name    = "HomeInventoryPy"
 mongo_cluster_name    = "Cluster-0"
-mongo_organization_id = "616c7dd7f3c14966f5dcfbd8"
-# Set `mongo_db_username` in secrets.sh. 
-mongo_db_username = "admin"
 # This can be wherever M0 is supported. See https://docs.atlas.mongodb.com/reference/amazon-aws/
 mongo_cluster_region = "US_WEST_2"
