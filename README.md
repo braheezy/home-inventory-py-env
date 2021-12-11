@@ -105,7 +105,7 @@ To connect the `CodeBuild` build process to the final `Elastic Beanstalk` deploy
 ## CodeStar Connection
 By AWS design, this connection is created in the Pending state and must be manually accepted. Oh well...
 
-## SSL {id-3}
+## SSL {#id-3}
 The `ssl` folder contains stuff to generate a self-signed SSL certificate. This is BAD practice in almost every scenarion, except the prototype proof-of-concept that this project is. But I refuse to pay money for a real certificate.
 
 `AWS Amplify` only deploys to HTTPS websites, so there were cert errors trying to connect to the HTTP-hosted backed. `Elastic Beanstalk` can do both HTTP and HTTPS, so I set up HTTPS to terminate at the [load balancer](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https.html).
