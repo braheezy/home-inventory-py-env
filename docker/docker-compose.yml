@@ -1,0 +1,32 @@
+version: "3.3"
+services:
+  frontend:
+    # Define a build section to create the app container.
+    build:
+      context: ${FRONTEND_BUILD_CONTEXT}
+    # Parametrize the image name via env vars auto-sourced from .env.
+    image: "${FRONTEND_IMAGE_NAME}:${FRONTEND_IMAGE_VERSION}"
+    # Publish the required ports.
+    ports:
+      - "127.0.0.1:9000:9000"
+    environment:
+      - API_URL=http://localhost:5000
+    depends_on: 
+      - "backend"
+  backend:
+    # Define a build section to create the app container.
+    build:
+      context: ${BACKEND_BUILD_CONTEXT}
+    # Parametrize the image name via env vars auto-sourced from .env.
+    image: "${BACKEND_IMAGE_NAME}:${BACKEND_IMAGE_VERSION}"
+    # Publish the required ports.
+    ports:
+      - "127.0.0.1:5000:5000"
+    depends_on: 
+      - "db"
+    environment:
+      - MONGO_URI=mongodb://db:27017
+  db:
+    image: mongo
+    ports: 
+      - "127.0.0.1:27017:27017"
